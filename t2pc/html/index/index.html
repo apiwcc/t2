@@ -1,0 +1,179 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="renderer" content="webkit"/>
+<meta name="force-rendering" content="webkit"/>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+<meta http-equiv="Cache-Control" content="no-transform"/>
+<meta http-equiv="Cache-Control" content="no-siteapp"/>
+<meta name="applicable-device" content="pc">
+<meta name="mobile-agent" content="format=html5;url=https://m.u9txt.com/">
+<meta http-equiv="mobile-agent" content="format=xhtml; url=https://m.u9txt.com/"/>
+<title>{$maccms.site_name}</title>
+<meta name="keywords" content="{$maccms.site_keywords}" />
+<meta name="description" content="{$maccms.site_description}" />
+{include file="p/in"}
+</head>
+ <body>
+   <div class="ywtop">
+   <div class="ywtop_con">
+      <div class="topbar">
+      <ul>
+	  {include file="p/dh1"}
+	  </ul>
+    </div>
+	
+	</div>
+</div>
+<div class="header">
+    <div class="header_logo">
+     <a href="/">{$maccms.site_name}</a><p>{$maccms.site_url}</p>
+    </div>
+    <div class="header_search">
+     <script>search();</script>
+    </div>
+    <div class="userpanel">
+    {include file="p/dh2"} 
+	 </div>
+   </div>
+   <div class="clear"></div>
+   <div class="nav">
+    <ul>
+    {include file="p/dh3"} 
+	</ul>
+</div>
+   <div id="main">
+    <div id="hotcontent">
+     <div class="l">
+	 {maccms:vod num="4" type="" order="desc" by="rnd"}
+	 	<div class="item">
+       <div class="image">
+	   <a href="{:mac_url_vod_detail($vo)}">
+	   <img src="{:mac_url_img($vo.vod_pic)}" alt="{$vo.vod_name}" width="120" height="150" /></a>
+	   </div>
+       <dl>
+        <dt><span>{$vo.vod_director}</span><a href="{:mac_url_vod_detail($vo)}">{$vo.vod_name}</a></dt>
+        <dd>{$vo.vod_blurb} </dd>
+       </dl>
+       <div class="clear"></div>
+      </div>
+	 {/maccms:vod} 
+	</div>
+     <div class="r">
+      <h2>随机推荐</h2>
+      <ul>
+	  {maccms:vod num="9" type="" order="desc" by="rnd"}
+	  	  <li><span class="s1">[{$vo.type.type_name} ]</span><span class="s2"><a href="	{:mac_url_vod_detail($vo)} ">{$vo.vod_name}</a></span><span class="s5">{$vo.vod_director}</span> </li>
+		{/maccms:vod}   
+		  </ul>
+     </div>
+     <div class="clear"></div>
+    </div>
+    <div class="novelslist">
+     <div class="content">
+      <h2>月点击</h2>
+	  	{maccms:vod num="1" type="" order="desc" by="hits_month"}
+		<div class="top">
+       <div class="image">
+	   <img src="{:mac_url_img($vo.vod_pic)}" alt="{$vo.vod_name}" width="67" height="82" /></div>
+       <dl>
+        <dt><a href="{:mac_url_vod_detail($vo)}">{$vo.vod_name}</a></dt>
+        <dd>{$vo.vod_blurb}</dd>
+       </dl>
+       <div class="clear"></div>
+      </div>
+	  {/maccms:vod} 
+	    <ul>
+       	   {maccms:vod num="12" type="" order="desc" by="hits_month" start="1"}
+	   	   <li><a href="{:mac_url_vod_detail($vo)}">{$vo.vod_name}</a>/{$vo.vod_director} </li>
+	   	   {/maccms:vod}
+	    </ul>
+     </div>
+     <div class="content">
+      <h2>周点击</h2>
+	  {maccms:vod num="1" type="" order="desc" by="hits_week"}
+      <div class="top">
+       <div class="image">
+	   <img src="{:mac_url_img($vo.vod_pic)}" alt="{$vo.vod_name}" width="67" height="82" /></div>
+       <dl>
+        <dt><a href="{:mac_url_vod_detail($vo)}">{$vo.vod_name}</a></dt>
+        <dd>{$vo.vod_blurb}</dd>
+       </dl>
+       <div class="clear"></div>
+      </div>
+	  {/maccms:vod}
+	        <ul>
+       	   {maccms:vod num="12" type="" order="desc" by="hits_week" start="1"}
+	   	   <li><a href="{:mac_url_vod_detail($vo)}">{$vo.vod_name}</a>/{$vo.vod_director} </li>
+	   	   {/maccms:vod}
+	    </ul>
+     </div>
+     <div class="content border">
+      <h2>日点击</h2>
+      	{maccms:vod num="1" type="" order="desc" by="hits_day"}
+      <div class="top">
+       <div class="image">
+	   <img src="{:mac_url_img($vo.vod_pic)}" alt="{$vo.vod_name}" width="67" height="82" /></div>
+       <dl>
+        <dt><a href="{:mac_url_vod_detail($vo)}">{$vo.vod_name}</a></dt>
+        <dd>{$vo.vod_blurb}</dd>
+       </dl>
+       <div class="clear"></div>
+      </div>
+	  {/maccms:vod}
+	        <ul>
+       	   {maccms:vod num="12" type="" order="desc" by="hits_day" start="1"}
+	   	   <li><a href="{:mac_url_vod_detail($vo)}">{$vo.vod_name}</a>/{$vo.vod_director} </li>
+	   	   {/maccms:vod}
+	    </ul>
+     </div>
+	 <div class="clear"></div>
+    </div>
+	
+	
+	 <div id="newscontent">
+     <div class="l">
+	  <h2>最近更新小说列表</h2>
+        <ul>
+			{maccms:vod num="50" type="" order="desc" by="time" }
+		          <li>
+				  <span class="s1">[{$vo.type.type_name}]</span>
+				  <span class="s2">
+				  <a href="{:mac_url_vod_detail($vo)}" target="_blank">{$vo.vod_name}</a>
+				  </span>
+				  <span class="s3">
+				  <a href="{:mac_url_vod_detail($vo)}" target="_blank">{$vo.vod_remarks}</a>
+				  </span>
+				  <span class="s4">{$vo.vod_director}</span>
+				  <span class="s5">{$vo.vod_time|date='m-d H:i',###}</span>
+				  </li>
+		     {/maccms:vod}     
+		       </ul>
+     </div>
+     <div class="r">
+      <h2>最新入库小说</h2>
+      <ul>
+	          {maccms:vod num="50" type="" order="desc" by="time_add" }
+              <li>
+			  <span class="s1">[{$vo.type.type_name}]</span>
+			  <span class="s2"><a href="{:mac_url_vod_detail($vo)}">{$vo.vod_name}</a></span>
+			  <span class="s5">{$vo.vod_time|date='m-d',###}</span>
+			  </li>
+              {/maccms:vod}  
+             </ul>
+     </div>
+     <div class="clear"></div>
+    </div>
+   </div>
+<div id="firendlink"> 友情连接：<!-- 友情链接 -->
+<a href="https://wwww.vdnnc.com" target="_blank">微度网</a>
+<a href="https://apiw.cc" target="_blank">小说采集资源</a>
+{maccms:link order="desc" by="sort" type="all"}
+<a href="{$vo.link_url}" target="_blank">{$vo.link_name}</a>
+{/maccms:link}
+</div>
+   {include file="p/f"}
+ </body>
+</html>
