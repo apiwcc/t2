@@ -784,7 +784,9 @@ a.p14 {
 	line-height: 150%;
 	padding-top: 15px;
 	width: 85%;
-	margin: auto
+	margin: auto;
+	height: 300px;
+	
 }
 
 .box_con #content p div img,.box_con #content p img,.imagecontent,.divimage {
