@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="renderer" content="webkit"/>
+<meta name="force-rendering" content="webkit"/>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+<meta http-equiv="Cache-Control" content="no-transform"/>
+<meta http-equiv="Cache-Control" content="no-siteapp"/>
+<title>{$obj.vod_name}小说 - {$obj.vod_name}在线阅读 - {$obj.vod_name}TXT下载 - {$maccms.site_name}</title>
+<meta name="keywords" content="{$obj.vod_name}小说,{$obj.vod_name}在线阅读,{$obj.vod_name}TXT下载 - {$maccms.site_name},{$maccms.site_keywords}" />
+<meta name="description" content="{$obj.vod_blurb}..." />
+{include file="p/in"}
+</head>
+ <body>
+<div id="wrapper">
+   <div class="ywtop">
+   <div class="ywtop_con">
+      <div class="topbar">
+      <ul>
+        {include file="p/dh1"}
+        </ul>
+    </div>
+	
+	</div>
+</div>
+<div class="header">
+    <div class="header_logo">
+     <a href="/">{$maccms.site_name}</a><p>{$maccms.site_url}</p>
+    </div>
+    <div class="header_search">
+     <script>search();</script>
+    </div>
+    <div class="userpanel">
+    {include file="p/dh2"} 
+	 </div>
+   </div>
+   <div class="clear"></div>
+   <div class="nav">
+    <ul>
+    {include file="p/dh3"} 
+	</ul>
+</div>
+   <div id="main">
+   <div class="box_con">
+    <div class="con_top">
+     <a href="/">{$maccms.site_name}</a> &gt;&gt; {$obj.vod_name}最新章节列表
+    </div>
+    <div id="maininfo">
+     <div id="info">
+      <h1>{$obj.vod_name}</h1>
+      <p>作&nbsp;&nbsp;者：{$obj.vod_director|mac_url_create='director'}</p>
+      <p>动&nbsp;&nbsp;作：<a href="javascript:void(0);" style="cursor:hand" class="mac_ulog" data-type="2" data-mid="{$maccms.mid}" data-id="{$obj.vod_id}">加入书架</a>,<a href="javascript:void(0);" style="cursor:hand" onclick="MAC.Fav(location.href,document.name);"><span>保存网址</span></a>,<a target="_blank" href="#ydbk" style="color:red;">TXT下载</a></p>
+      <p>最后更新：{$obj.vod_time|date='Y-m-d H:i',###}</p>
+      <p>最新更新：<a href="#ydbk">{$obj.vod_remarks}</a></p>
+     </div>
+     <div id="intro"><p>{$obj.vod_content}...</p>
+	 	 <p>《{$obj.vod_name}》小说推荐：{maccms:vod num="10" type="current" order="desc" by="time"}
+		 <a href="{:mac_url_vod_detail($vo)}">{$vo.vod_name}</a>,
+		 {/maccms:vod}</p>
+	</div>
+    </div>
+    <div id="sidebar">
+     <div id="fmimg">
+      <img alt="{$obj.vod_name}" src="{:mac_url_img($obj.vod_pic)}" width="120" height="150" />
+      <span class="b"></span>
+     </div>
+    </div>
+   </div><a name="ydbk"></a>
+   <div class="box_con">
+    <div id="list">
+     <dl>
+      <dt>
+       《{$obj.vod_name}》最新章节线路选择：
+			{maccms:foreach name="obj.vod_play_list" id="vo" key="key"}
+			<b><a href="#{$vo.player_info.show}">{$vo.player_info.show}</a></b>			
+			{/maccms:foreach}
+      </dt>
+	  	   
+	  	    
+      	</dl>
+    </div>
+   </div>
+   <div class="box_con">
+    <div id="list">
+     <dl>
+      
+	  	    {maccms:foreach name="obj.vod_play_list" id="vo" key="key"}
+			<dt><b>线路：<a name="{$vo.player_info.show}"></a>{$vo.player_info.show}</b> </dt>
+			{maccms:foreach name="vo.urls" id="vo2" key="key2"}
+			<dd><a href="{:mac_url_vod_play($obj,['sid'=>$vo.sid,'nid'=>$vo2.nid])}">{$vo2.name}</a></dd>
+	        {/maccms:foreach}
+			{/maccms:foreach}
+	  	    
+      	</dl>
+    </div>
+   </div>
+   <div class="mobile"><p>
+   <a href="#ydbk">{$obj.vod_name}最新章节手机版</a> - 
+   <a href="#ydbk">{$obj.vod_name}全文阅读手机版</a> - 
+   <a href="#ydbk">{$obj.vod_name}txt下载手机版</a> - 
+   <a href="#ydbk">{$obj.vod_director}的全部小说</a> - 
+   <a href="#ydbk">{$obj.vod_name} {$maccms.site_name}移动版</a> - 
+   <a href="#ydbk">{$maccms.site_name}手机站</a>
+   </p>
+   </div>   
+    		<div class="hotbook"><a ><b>书友收藏:</b></a>
+			{maccms:vod num="20" type="current" order="desc" by="rnd"}
+			<a href="{:mac_url_vod_detail($vo)}">{$vo.vod_name}</a>、
+			{/maccms:vod}
+
+			</div>
+			
+			<div class="hotbook"><a ><b>同类新书:</b></a> 
+			{maccms:vod num="20" type="current" order="desc" by="time"}
+		 <a href="{:mac_url_vod_detail($vo)}">{$vo.vod_name}</a>、
+			{/maccms:vod}
+			</div>
+   <div class="pc"><p>
+   <a href="#ydbk">{$obj.vod_name}最新章节手机版</a>,
+   <a href="#ydbk">{$obj.vod_name}全文阅读手机版</a>,
+   <a href="#ydbk">{$obj.vod_name}txt下载手机版</a>,
+   <a href="#ydbk">{$obj.vod_director}的全部小说</a>,
+   <a href="#ydbk">{$obj.vod_name} {$maccms.site_name}移动版</a>,
+   <a href="#ydbk">{$maccms.site_name}手机站</a>
+   </p></div>
+   <div class="tuibook">《<a href="#ydbk">{$obj.vod_name}</a>》是作者{$obj.vod_director}呕心沥血倾情打造！
+本站小说 <a href="#ydbk"><strong>{$obj.vod_name}最新章节</strong></a>为转载作品，所有章节均由网友上传，<a href="#ydbk"><strong>{$obj.vod_name}txt下载</strong></a>转载至本站只是为了宣传本书让更多读者欣赏。如果对百炼成仙最新章节作品浏览、或对<em>{$obj.vod_director}</em>的最新作品内容有质疑的请联系我们！</div>
+  {include file="p/f"}
+  </div>
+ </body>
+</html>
