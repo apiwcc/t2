@@ -13,8 +13,8 @@ Html+Css+Js+Jq
 
 #### 其它说明
 
-微度引擎：vdnnc.com
+微度引擎：[vdnnc.com](https://vdnnc.com)
 
-#### MacCmsV10小说资源
+建议资源站:[ApiW.cc](https://apiw.cc)
 
-建议资源站:ApiW.cc
+演示地址:[t2.news.vdnnc.com](http://t2.news.vdnnc.com)
