@@ -62,7 +62,7 @@
       <h2>随机推荐</h2>
       <ul>
 	  {maccms:vod num="9" type="" order="desc" by="rnd"}
-	  	  <li><span class="s1">[{$vo.type.type_name} ]</span><span class="s2"><a href="	{:mac_url_vod_detail($vo)} ">{$vo.vod_name}</a></span><span class="s5">{$vo.vod_director}</span> </li>
+	  	  <li><span class="s1">[{$vo.type.type_name|mac_substring=2}]</span><span class="s2"><a href="	{:mac_url_vod_detail($vo)} ">{$vo.vod_name}</a></span><span class="s5">{$vo.vod_director}</span> </li>
 		{/maccms:vod}   
 		  </ul>
      </div>
@@ -154,7 +154,7 @@
       <ul>
 	          {maccms:vod num="50" type="" order="desc" by="time_add" }
               <li>
-			  <span class="s1">[{$vo.type.type_name}]</span>
+			  <span class="s1">[{$vo.type.type_name|mac_substring=2}]</span>
 			  <span class="s2"><a href="{:mac_url_vod_detail($vo)}">{$vo.vod_name}</a></span>
 			  <span class="s5">{$vo.vod_time|date='m-d',###}</span>
 			  </li>
