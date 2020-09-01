@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="renderer" content="webkit"/>
+<meta name="force-rendering" content="webkit"/>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+<meta http-equiv="Cache-Control" content="no-transform"/>
+<meta http-equiv="Cache-Control" content="no-siteapp"/>
+<title>{$param.wd}{$param.actor}{$param.director}{$param.area}{$param.lang}{$param.year}{$param.class} {$maccms.site_name} - 小说搜索 - {$maccms.site_name}</title>
+<meta name="keywords" content="小说搜索,{$maccms.site_name}" />
+<meta name="description" content="{$maccms.site_name}小说搜索" />
+{include file="p/in"}
+</head>
+ <body>
+   <div class="ywtop">
+   <div class="ywtop_con">
+      <div class="topbar">
+      <ul>
+        {include file="p/dh1"}
+        </ul>
+    </div>
+	
+	</div>
+</div>
+<div class="header">
+    <div class="header_logo">
+   <a href="/">{$maccms.site_name}</a><p>{$maccms.site_url}</p>
+    </div>
+    
+	{include file="index/so"}
+    <div class="userpanel">
+     {include file="p/dh2"}
+	 </div>
+   </div>
+   <div class="clear"></div>
+   <div class="nav">
+    <ul>
+     {include file="p/dh3"} 
+	     </ul>
+</div>
+   <div id="main">
+   <div class="con_home"><a href="/">{$maccms.site_name}</a> &gt;&gt; 小说搜索</div>
+    <div class="novelslist2">
+      <h2>小说搜索列表</h2>
+      <ul>
+        <li><span class="s1"><b>小说分类</b></span><span class="s2"><b>小说名称</b></span><span class="s3"><b>最新章节</b></span><span class="s4"><b>作者</b></span><span class="s7"><b>更新时间</b></span></li>
+		        {maccms:vod num="50" paging="yes" pageurl="vod/search" order="desc" by="time"}
+				<li><span class="s1">[{$vo.type.type_name}]</span>
+				<span class="s2 girls">
+				<a href="{:mac_url_vod_detail($vo)}" target="_blank">{$vo.vod_name}</a>
+				</span>
+				<span class="s3">
+				<a href="{:mac_url_vod_detail($vo)}#ydbk" target="_blank">{$vo.vod_remarks}</a>
+				</span>
+				<span class="s4">
+				{$vo.vod_director|mac_default='未更新'}
+				</span>
+				
+				<span class="s7">{$vo.vod_time|date='m-d H:i',###}</span></li>
+		       {/maccms:vod}   
+		      </ul>
+      <div id="pages">
+        {include file="p/p"}
+		</div>
+      </div>
+    </div>
+	  </div>
+  {include file="p/f"}
+  </body>
+</html>

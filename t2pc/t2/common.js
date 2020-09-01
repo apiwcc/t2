@@ -32,8 +32,14 @@ document.writeln("<li id=\"bookcase\"><a href=\"/history.html\" target=\"_top\">
 }
 }
 
+
+function socommon() {
+	document.writeln('<a href="https://apiw.cc">ApiWcc</a>');
+	
+}
+
 function search() {
-	document.writeln('<form target="_blank" style="margin:0;padding:0;"  action="/search.html" method="post">');
+	document.writeln('<form target="_blank" style="margin:0;padding:0;"  action="{:mac_url('vod/search')}" method="post">');
 	document.writeln('<input type="hidden" name="searchtype" value="all">');
 	document.writeln("<input class=\"search\" id=\"bdcsMain\" name=\"searchkey\" type=\"text\"  maxlength=\"30\" value=\"可搜书名和作者，请您少字也别输错字。\" title=\"请正确输入\" onfocus=\"this.style.color = '#000000';this.focus();if(this.value=='可搜书名和作者，请您少字也别输错字。'){this.value='';}\" ondblclick=\"javascript:this.value=''\" />");
 	document.writeln('<input type="submit" class="searchBtn" value="搜索" title="搜索"  /></form>');

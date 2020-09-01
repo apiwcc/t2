@@ -28,9 +28,7 @@
     <div class="header_logo">
      <a href="/">{$maccms.site_name}</a><p>{$maccms.site_url}</p>
     </div>
-    <div class="header_search">
-     <script>search();</script>
-    </div>
+    {include file="index/so"}
     <div class="userpanel">
     {include file="p/dh2"} 
 	 </div>
@@ -141,7 +139,7 @@
 				  <a href="{:mac_url_vod_detail($vo)}" target="_blank">{$vo.vod_name}</a>
 				  </span>
 				  <span class="s3">
-				  <a href="{:mac_url_vod_detail($vo)}" target="_blank">{$vo.vod_remarks}</a>
+				  <a href="{:mac_url_vod_detail($vo)}#ydbk" target="_blank">{$vo.vod_remarks}</a>
 				  </span>
 				  <span class="s4">{$vo.vod_director}</span>
 				  <span class="s5">{$vo.vod_time|date='m-d H:i',###}</span>

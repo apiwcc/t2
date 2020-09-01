@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="renderer" content="webkit"/>
+<meta name="force-rendering" content="webkit"/>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+<meta http-equiv="Cache-Control" content="no-transform"/>
+<meta http-equiv="Cache-Control" content="no-siteapp"/>
+<title>全部小说 - {$maccms.site_name}</title>
+<meta name="keywords" content="全部小说,{$maccms.site_name}" />
+<meta name="description" content="{$maccms.site_name}全部小说" />
+{include file="p/in"}
+</head>
+ <body>
+<div class="ywtop">
+   <div class="ywtop_con">
+      <div class="topbar">
+      <ul>
+        {include file="p/dh1"}
+        </ul>
+    </div>
+	
+	</div>
+</div>
+<div class="header">
+    <div class="header_logo">
+     <a href="/">{$maccms.site_name}</a><p>{$maccms.site_url}</p>
+    </div>
+    {include file="index/so"}
+    <div class="userpanel">
+    {include file="p/dh2"} 
+	 </div>
+   </div>
+   <div class="clear"></div>
+   <div class="nav">
+    <ul>
+     {include file="p/dh3"} 
+	     </ul>
+</div>
+<div id="main">
+<!-- 开始 -->
+    <div class="shuku">
+      <div class="title"><b>{$maccms.site_name}汇聚最优秀的海量小说，无限精彩任您挑选。</b><span><a href="/label/map.html" class="red">清空条件</a></span></div>
+      <div class="filter">
+        <ul>
+		 <li class="boy">
+		 <a href="/label/map.html" class="curr">全部</a>
+		 {maccms:type num="" ids="" order="asc" by="sort" id="vo1" key="key1"}
+		 <a href="{:mac_url_type($vo1)}">{$vo1.type_name}</a>
+		 {/maccms:type}
+		 
+		 </li>
+		 
+        </ul>
+      </div>
+    </div>
+	
+    <div class="novelslist2">
+      <h2>全部小说 默认列表</h2>
+      <div class="sitebox">
+	  
+	  {maccms:vod num="30" paging="yes" pageurl="label/map" type="current" order="desc" by="time"}
+		 <dl>
+          <dt>
+		  <a href="{:mac_url_vod_detail($vo)}" target="_blank">
+		  <img src="{:mac_url_img($vo.vod_pic)}" alt="{$vo.vod_name}" height="120" width="90">
+		  </a>
+		  </dt>
+          <dd>
+            <h3>
+			<span class="uptime">{$vo.vod_time|date='m-d H:i',###}</span>
+			<a href="{:mac_url_vod_detail($vo)}" target="_blank">{$vo.vod_name}</a>
+			</h3>
+          </dd>
+          <dd class="book_other">作者：<span>{$vo.vod_director}</span></dd>
+          <dd class="book_des">{$vo.vod_blurb|mac_substring=20}}...</dd>
+          <dd class="book_other">最新章节: <a href="{:mac_url_vod_detail($vo)}#ydbk" target="_blank">{$vo.vod_remarks}</a></dd>
+        </dl>
+      {/maccms:vod}  
+		
+      </div>
+      <div id="pages">
+        {include file="p/p"}
+      </div>
+    </div>
+<!-- over -->
+</div>
+{include file="p/f"}
+</body>
+</html>
