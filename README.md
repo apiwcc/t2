@@ -9,11 +9,11 @@ Html+Css+Js+Jq
 
 #### 安装教程
 
-模板制作中，完成后将发布使用说明！
+直接上传t2pc 和 tcweb 到MacCmsV10的template目录中，然后到后台选择PC端为t2pc,移动端为t2web，其它不用管！
 
-#### 使用说明
+#### 其它说明
 
-模板制作中，完成后将发布使用说明！
+微度引擎：vdnnc.com
 
 #### MacCmsV10小说资源
 
